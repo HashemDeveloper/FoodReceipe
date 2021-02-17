@@ -76,7 +76,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
     // ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-extensions:$lifeCycleExtensionVersion"
-    implementation "androidx.lifecycle:lifecycle-common-java8:$lifeCycleExtensionVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.3.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$viewModelSaveStateVersion"
     //Coroutines scopes: ViewModelScope, LifecycleScope and LiveData
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$coroutines_scopes"
@@ -90,9 +90,9 @@ dependencies {
         exclude group: 'glide-parent'
     }
     // gson
-    implementation "com.google.code.gson:gson$gson"
+    implementation "com.google.code.gson:gson:$gson"
     //shimmer
     implementation "com.facebook.shimmer:shimmer:$shimmer_recyclerview"
     implementation "com.todkars:shimmer-recyclerview:$shimmer_recyclerview"
-    implementation "org.jsoup:jsoup$jsoup"
+    implementation "org.jsoup:jsoup:$jsoup"
 }
