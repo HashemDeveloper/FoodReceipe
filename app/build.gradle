@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.practice.foodrecipe"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        dataBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    // Room Database
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_compiler_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    // data binding
+    kapt "com.android.databinding:compiler:$data_binding_compiler"
+    kapt "androidx.databinding:databinding-common:$data_binding_common"
+    // data store -> shared pref alternative
+    implementation "androidx.datastore:datastore-preferences:$data_store_pref"
+    // recyclerview
+    implementation "androidx.recyclerview:recyclerview:$recyclerview"
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$gsonVersion"
+    // dagger hilt
+    implementation "com.google.dagger:hilt-android:$dagger_hilt_v"
+    kapt "com.google.dagger:hilt-compiler:$dagger_hilt_v"
+    // Kotlin coroutine dependencies
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifeCycleExtensionVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifeCycleExtensionVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$viewModelSaveStateVersion"
+    //Coroutines scopes: ViewModelScope, LifecycleScope and LiveData
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$coroutines_scopes"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$coroutines_scopes"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$coroutines_scopes"
+    // glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    implementation "jp.wasabeef:glide-transformations:$glideTransformationVersion"
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+    implementation('com.github.bumptech.glide:okhttp3-integration:4.10.0') {
+        exclude group: 'glide-parent'
+    }
+    // gson
+    implementation "com.google.code.gson:gson$gson"
+    //shimmer
+    implementation "com.facebook.shimmer:shimmer:$shimmer_recyclerview"
+    implementation "com.todkars:shimmer-recyclerview:$shimmer_recyclerview"
+    implementation "org.jsoup:jsoup$jsoup"
+}
