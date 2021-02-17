@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_nav">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/receipePage">
 
+    <fragment
+        android:id="@+id/receipePage"
+        android:name="com.practice.foodrecipe.RecipePage"
+        android:label="fragment_receipe_page"
+        tools:layout="@layout/fragment_recipe_page" />
+    <fragment
+        android:id="@+id/favoritePage"
+        android:name="com.practice.foodrecipe.FavoritePage"
+        android:label="fragment_favorite_page"
+        tools:layout="@layout/fragment_favorite_page" />
+    <fragment
+        android:id="@+id/jokePage"
+        android:name="com.practice.foodrecipe.JokePage"
+        android:label="fragment_joke_page"
+        tools:layout="@layout/fragment_joke_page" />
 </navigation>
