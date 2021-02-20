@@ -1,14 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lightGray"
     tools:context=".RecipePage">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Recipe Fragment" />
+    <com.todkars.shimmer.ShimmerRecyclerView
+        android:id="@+id/shimmerRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
+        app:layout_constraintStart_toStartOf="@+id/leftGuideLne"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftGuideLne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:contentDescription="@string/food_menu_button"
+        android:focusable="true"
+        android:src="@drawable/ic_resturant_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/fragment_recipe_error_image_view_id"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:alpha="0.5f"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/shimmerRecyclerView"
+        app:layout_constraintVertical_bias="0.37"
+        app:srcCompat="@drawable/ic_sad_24" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/fragment_recipe_error_text_view_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.5f"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:text="@string/no_internet_connection"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_recipe_error_image_view_id"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="@+id/fragment_recipe_error_image_view_id"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_recipe_error_image_view_id" />
 </androidx.constraintlayout.widget.ConstraintLayout>
